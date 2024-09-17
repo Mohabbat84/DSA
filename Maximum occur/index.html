@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DSA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  
+<script>
+  let str="hello";
+  let obj={};
+  let maxKey='';
+  for (let i = 0; i < str.length-1; i++) {
+    let key=str[i];
+    if (!obj[key]) {
+      obj[key]=0;
+    }
+    obj[key]++;
+    if (maxKey=='' || obj[key]>obj[maxKey]) {
+      maxKey=key;
+    }
+    }
+   console.log(maxKey);
+</script>
+</body>
+
+</html>
