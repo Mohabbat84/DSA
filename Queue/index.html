@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Queue</title>
+</head>
+
+<body>
+  <script>
+    let array = [];
+    let currentSize = array.length;
+
+    function enqueue(data) {
+      array[currentSize] = data;
+      currentSize++;
+    }
+
+    function dequeue() {
+      if (currentSize <= 0) {
+        alert('Queue is already empty...');
+        return;
+      } else {
+        for (let i = 0; i < array.length; i++) {
+          array[i] = array[i + 1];
+        }
+        currentSize--;
+        array.length = currentSize;
+      }
+      return array;
+    }
+
+    enqueue(64);
+    enqueue(87);
+    enqueue(7);
+    enqueue(41);
+    enqueue(24);
+    dequeue();
+    dequeue();
+    console.log(array);
+  </script>
+</body>
+
+</html>
